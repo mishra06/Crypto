@@ -1,0 +1,46 @@
+.navbar{
+    width: 100%;
+    height: 10vh;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nav{
+    display: flex;
+    width: 93%;
+    border: 1px solid black;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(29, 17, 17);
+    color: aliceblue; 
+    
+}
+.left{
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.icons_nav{
+    color: yellow;
+    
+}
+
+.right{
+    display: flex;
+    gap: 2rem;
+}
+.right_sec{
+    color: white;
+    font-size: 20px;
+}
+
+.right > a{
+    list-style: none;
+    
+}

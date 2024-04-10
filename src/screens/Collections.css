@@ -1,0 +1,29 @@
+.images{
+    width: 4rem;
+}
+.names{
+    width: 4rem;
+}
+
+.prices{
+    width: 4rem;
+    
+}
+.highs{
+    width: 4rem;
+}
+.all_tym_high{
+    width: 6rem;
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid red; */
+    gap: .5rem;
+}
+.all_tym_high .datess{
+    font-size: 13px;
+    color: rgb(87, 84, 84);
+    font-weight: 600;
+}
+.rank{
+    width: 4rem;
+}
