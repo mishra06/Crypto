@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     DATA :[],
-    COIN:[]
+    COIN:[],
+    Details:[]
 };
 
 const cryptoSlice = createSlice({
@@ -14,9 +15,12 @@ const cryptoSlice = createSlice({
         },
         SetCoin:(state,action)=>{
             state.COIN = action.payload
+        },
+        SetDetails:(state,action)=>{
+            state.Details = action.payload
         }
     }
 });
 
-export const {SetData,SetCoin} = cryptoSlice.actions;
+export const {SetData,SetCoin,SetDetails} = cryptoSlice.actions;
 export default cryptoSlice.reducer;
