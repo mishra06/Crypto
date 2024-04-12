@@ -7,6 +7,7 @@ import Details from './components/Details';
 import ThreedModel from './screens/ThreedModel';
 
 function App() {
+
   return (
     <div className="App">
       <BrowserRouter>

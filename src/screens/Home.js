@@ -5,7 +5,7 @@ import { fetchApi } from '../utils/index';
 import { SetData } from '../slice/CryptoSlice';
 import { URL } from '../utils/constant';
 import Loader from '../components/Loader'
-import ThreedModel from './ThreedModel';
+// import ThreedModel from './ThreedModel';
 
 
 const Home = () => {
@@ -37,9 +37,10 @@ console.log("new",details);
     <>
     {
       loading ? <Loader/>:
+      <>
       
-        <div>
-          {
+        
+          { details && 
             details.map((coin)=>{
               return(
                 <div key={coin.id} className="exchange_cards">
@@ -62,7 +63,7 @@ console.log("new",details);
               )
             })
           }
-        </div>
+       </> 
     }
     </>
   )

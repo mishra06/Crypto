@@ -1,1 +1,1 @@
-export const URL = 'https://api.coingecko.com/api/v3';
+export const URL = "https://api.coingecko.com/api/v3";
