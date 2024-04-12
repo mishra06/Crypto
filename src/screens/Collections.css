@@ -18,6 +18,7 @@
     flex-direction: column;
     /* border: 1px solid red; */
     gap: .5rem;
+    align-items: center;
 }
 .all_tym_high .datess{
     font-size: 13px;
@@ -26,4 +27,20 @@
 }
 .rank{
     width: 4rem;
+}
+.search_bar{
+    margin-left: 12rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+.search_bar>input{
+    outline: none;
+    /* border-color:  aqua; */
+    padding-left: 1rem;
+    border-radius: 10px;
+    border: none;
+}
+
+.price_options_sec{
+    margin-left: 12rem;
 }

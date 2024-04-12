@@ -23,7 +23,7 @@ const Collections = () => {
   const coinDetails = useSelector((state)=>state.cryptoSlice.COIN);
 
   async function GetData() {
-    const data = await fetchApi(`${URL}/coins/markets?vs_crruency=${pysa}`, {
+    const data = await fetchApi(`${URL}/coins/markets?vs_currency=${pysa}`, {
         headers: {
             accept: "application/json",
             Authorization: `Bearer ${process.env.REACT_API_KEY}`,
@@ -42,7 +42,7 @@ const Collections = () => {
   return (
     <>
       
-      <div>
+      <div className='collections_sec'>
         <div className="search_bar">
           <input type="text" placeholder='Search coin....'
           style={{height:"2rem",width:"20rem"}}
@@ -51,12 +51,12 @@ const Collections = () => {
           }}/>
         </div>
         
-          <div className="price_options_sec">
+          <div className="price_options_sec btn">
               <button onClick={()=>setPysa('inr')}>INR</button>
               <button onClick={()=>setPysa('usd')}>USD</button>
               <button onClick={()=>setPysa('eur')}>EUR</button>
           </div>
-          {
+          {coinDetails &&
           coinDetails.filter((coin)=>{
             if(coin=== ''){
               return coin
@@ -64,34 +64,8 @@ const Collections = () => {
               return coin
             }
           }).map((coins,i)=>{
-            // const profitRate = coins.price_change_percentage_24h>0
             return(
               <CoinsCard key={i} coins={coins} id={coins.id} i={i} PRICES ={PRICES}/>
-              // <NavLink to={`/collections/${id}`} style={{textDecoration:"none"}}>
-              // <div key={coins.id} className="exchange_cards">
-              //       <div className="images">
-              //         <img style={{height:"80px"}} src={coins.image} alt="coins_image" />
-              //       </div>
-              //       <div className="names">
-              //           {coins.name}
-              //       </div>
-              //       <div className="ranks">
-              //         {coins.market_cap_rank}
-              //       </div>
-              //       <div className="prices">
-              //       {PRICES}{coins.current_price}
-              //       </div>
-              //       <div style={profitRate? {color:"green"}:{color:"red"}} className="highs">
-              //       {/* { profitRate ? "+" + coins.price_change_percentage_24h.toFixed(2): coins.price_change_percentage_24h.toFixed(2)} */}
-              //       { profitRate ? "+" + coins.price_change_percentage_24h: coins.price_change_percentage_24h}
-              //       </div>
-              //       <div className="all_tym_high">
-              //         <span>{coins.ath}</span>
-              //         {/* <span className='datess'>{coins.ath_date.slice(0,10)}</span> */}
-              //         <span className='datess'>{coins.ath_date}</span>
-              //       </div>
-              // </div>
-              // </NavLink>
             )
           })
         }
@@ -105,7 +79,7 @@ const CoinsCard = ({coins,PRICES,i,id})=>{
 
   const profitRate = coins.price_change_percentage_24h>0
   return(
-    <NavLink to={`/collections/${id}`} style={{textDecoration:"none"}}>
+    <NavLink to={`/collections/${id}`} style={{textDecoration:"none",color:'yellow'}}>
             <div key={coins.id} className="exchange_cards">
                     <div className="images">
                       <img style={{height:"80px"}} src={coins.image} alt="coins_image" />
@@ -125,8 +99,8 @@ const CoinsCard = ({coins,PRICES,i,id})=>{
                     </div>
                     <div className="all_tym_high">
                       <span>{coins.ath}</span>
-                      {/* <span className='datess'>{coins.ath_date.slice(0,10)}</span> */}
-                      <span className='datess'>{coins.ath_date}</span>
+                      <span className='datess'>{coins.ath_date.slice(0,10)}</span>
+                      {/* <span className='datess'>{coins.ath_date}</span> */}
                     </div>
               </div>
     </NavLink>          

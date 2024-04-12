@@ -8,12 +8,12 @@ const Navbar = () => {
     <div className='navbar'>
       <div className="nav">
         <div className="left">
-          <span className="name_icon">CRYPTO</span>
+          <span className="name_icon"><NavLink style={{textDecoration:"none",color:"white"}} to="./crypto">CRYPTO</NavLink></span>
           <span className='icons_nav'><SiBitcoinsv /></span>
         </div>
         <div className="right">
           <span className='right_sec'><NavLink style={{textDecoration:"none",color:"white"}} to="./home">Home</NavLink></span>
-          <span className='right_sec'><NavLink style={{textDecoration:"none",color:"white"}} to="./collection">Collection's</NavLink></span>
+          <span className='right_sec'><NavLink style={{textDecoration:"none",color:"white"}} to="./collection">Coin's</NavLink></span>
         </div>
         
       </div>

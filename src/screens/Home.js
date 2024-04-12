@@ -5,6 +5,7 @@ import { fetchApi } from '../utils/index';
 import { SetData } from '../slice/CryptoSlice';
 import { URL } from '../utils/constant';
 import Loader from '../components/Loader'
+import ThreedModel from './ThreedModel';
 
 
 const Home = () => {
@@ -36,13 +37,14 @@ console.log("new",details);
     <>
     {
       loading ? <Loader/>:
+      
         <div>
           {
             details.map((coin)=>{
               return(
                 <div key={coin.id} className="exchange_cards">
                     <div className="image">
-                      <img style={{height:"80px"}} src={coin.image} alt="coins_image" />
+                      <img style={{height:"100px"}} src={coin.image} alt="coins_image" />
                     </div>
                     <div className="name">
                         {coin.name}
@@ -52,6 +54,9 @@ console.log("new",details);
                     </div>
                     <div className="rank">
                       {coin.trust_score_rank}
+                    </div>
+                    <div className="rank">
+                      {coin.year_established}
                     </div>
                 </div>
               )

@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
     DATA :[],
     COIN:[],
-    Details:[]
+    Details:[],
+    CHART:[]
 };
 
 const cryptoSlice = createSlice({
@@ -18,9 +19,12 @@ const cryptoSlice = createSlice({
         },
         SetDetails:(state,action)=>{
             state.Details = action.payload
+        },
+        SetChart:(state,action)=>{
+            state.CHART = action.payload
         }
     }
 });
 
-export const {SetData,SetCoin,SetDetails} = cryptoSlice.actions;
+export const {SetData,SetCoin,SetDetails,SetChart} = cryptoSlice.actions;
 export default cryptoSlice.reducer;
