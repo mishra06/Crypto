@@ -5,7 +5,6 @@ import { fetchApi } from '../utils/index';
 import { SetData } from '../slice/CryptoSlice';
 import { URL } from '../utils/constant';
 import Loader from '../components/Loader'
-// import ThreedModel from './ThreedModel';
 
 
 const Home = () => {
@@ -22,7 +21,7 @@ const Home = () => {
             Authorization: `Bearer ${process.env.REACT_API_KEY}`,
           },
     });
-    // console.log(data.data);
+    console.log(data.data);
     dispatch(SetData(data?.data));
     setLoading(false); 
 }
@@ -30,7 +29,7 @@ const Home = () => {
 useEffect(()=>{
   GetData()
 },[])
-console.log("new",details);
+// console.log("new",details);
 
 
   return (
@@ -45,7 +44,7 @@ console.log("new",details);
               return(
                 <div key={coin.id} className="exchange_cards">
                     <div className="image">
-                      <img style={{height:"100px"}} src={coin.image} alt="coins_image" />
+                      <img style={{height:"100px"}} src={coin.image} alt="Exchange_coins_img" />
                     </div>
                     <div className="name">
                         {coin.name}
